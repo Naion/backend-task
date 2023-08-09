@@ -37,7 +37,7 @@ def upload_image():
     # Added "+ '==' to handle "binascii.Error: Incorrect padding", base64 will truncate any unnecessary
     # padding characters
   imgdata = base64.b64decode(removed_header + '==')
-  filename = f'BackEnd/images/{unique_id}.{extension}'
+  filename = f'./images/{unique_id}.{extension}'
   if extension in fileTypes:
     with open(filename, 'wb') as f:
       f.write(imgdata)
