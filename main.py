@@ -51,7 +51,7 @@ def upload_image():
 @app.post("/analyse_image")
 def analyse_image():
   #Searching the stored image given its ID.
-  filepath = f"BackEnd/images/{request.json['uuid']}"
+  filepath = f"./images/{request.json['uuid']}"
   img = Image.open(filepath)
   #Converting to Base64 before returning the data in order to print it on DOM.
   img2 = image_to_base64(img, 'PNG')
@@ -62,10 +62,10 @@ def list_images():
   base64files = []
   d = []
   #Iterate through each stored file in the image directory.
-  files = [f for f in listdir("BackEnd/images") if isfile(join("BackEnd/images", f))]
+  files = [f for f in listdir("./images") if isfile(join("./images", f))]
   for file in files:
     #Getting the path and converting the image to Base64 plus adding to dictionary the requiered file information.
-    filepath = f"BackEnd/images/{file}"
+    filepath = f"./images/{file}"
     img = Image.open(filepath)
     img2 = image_to_base64(img, 'PNG')
     base64files.append(img2.decode())
