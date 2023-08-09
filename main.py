@@ -19,7 +19,7 @@ def image_to_base64(image, extension):
 
 @app.route("/")
 def hello_wolrd():
-  return "<p>Hello world</p>"
+  return "<p>Test BackEnd</p>"
 
 @app.post("/upload_image")
 def upload_image():
