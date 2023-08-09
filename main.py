@@ -62,7 +62,7 @@ def list_images():
   base64files = []
   d = []
   #Iterate through each stored file in the image directory.
-  files = [f for f in listdir("./images") if isfile(join("./images", f))]
+  files = [f for f in listdir("./images/") if isfile(join("./images/", f))]
   for file in files:
     #Getting the path and converting the image to Base64 plus adding to dictionary the requiered file information.
     filepath = f"./images/{file}"
